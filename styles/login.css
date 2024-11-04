@@ -85,12 +85,16 @@ a {
   justify-content: center;
   gap: 30px;
   font-family: "Inter";
+  font-size: 0.8rem;
   margin-bottom: 20px;
 }
 
-.btc-cta button {
+.btc-cta a,
+.btc-cta input {
   width: 120px;
-  padding: 10px;
+  padding: 8px;
+  text-align: center;
+  align-self: center;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -102,5 +106,14 @@ a {
 
   &:hover {
     background-color: #009900;
+  }
+}
+
+.cancel {
+  background-color: #dfdfdf;
+  color: black;
+
+  &:hover {
+    background-color: #b4b3b3;
   }
 }
