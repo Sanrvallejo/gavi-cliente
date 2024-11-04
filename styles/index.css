@@ -94,7 +94,24 @@ button {
 
   &:hover {
     background-color: #22aa46;
+  }
+}
+
+#registro a {
+  color: white;
+
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#inicio a {
+  color: #22aa46;
+
+  &:hover {
     color: white;
     border: none;
   }
+
 }
