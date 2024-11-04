@@ -63,24 +63,28 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5vw;
   font-family: "Inter";
   font-size: 0.8rem;
   font-weight: 200;
+  gap: 5vw;
 }
 
-button {
-  width: 120px;
-  padding: 10px;
-  cursor: pointer;
+.btc-cta p {
+  margin-bottom: 20px;
+}
+
+.btc-cta a {
+  padding: 10px 30px;
   border-radius: 5px;
   font-family: "Inter";
+  font-size: 0.8rem;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 #registro {
-  background-color:#22aa46;
+  background-color: #22aa46;
   color: white;
-  border: none;
 
   &:hover {
     background-color: #009900;
@@ -88,30 +92,13 @@ button {
 }
 
 #inicio {
-  background-color:white;
   color: #22aa46;
   border: 2px solid #22aa46;
 
   &:hover {
     background-color: #22aa46;
-  }
-}
-
-#registro a {
-  color: white;
-
-  &:visited {
-    color: white;
-    text-decoration: none;
-  }
-}
-
-#inicio a {
-  color: #22aa46;
-
-  &:hover {
     color: white;
     border: none;
-  }
 
+  }
 }
