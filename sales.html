@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" />
+  <link rel="stylesheet" href="styles/navside-header-fragment.css">
+  <link rel="stylesheet" href="styles/sales.css">
+  <link rel="icon" href="imgs/logo_gavi.png" type="image/x-icon">
+
+  <title>Gavi Pro</title>
+</head>
+
+<body>
+  <header>
+    <h1>Ventas</h1>
+    <div class="header-icons">
+      <span class="material-symbols-rounded">home</span>
+      <span class="material-symbols-rounded">login</span>
+    </div>
+  </header>
+
+  <!--Nav side - menu-->
+  <nav>
+    <div class="menu-container">
+      <img id="primary-logo" src="imgs/main_logo_menu.png" alt="primary-logo">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <span class="material-symbols-rounded">
+            manage_accounts
+          </span>
+          <a class="link-menu" href="#">Perfil</a>
+        </li>
+        <li class="menu-item">
+          <span class="material-symbols-rounded">
+            inventory
+          </span>
+          <a class="link-menu" href="products.html">Inventario</a>
+        </li>
+        <li class="menu-item">
+          <span class="material-symbols-rounded">
+            currency_exchange
+          </span><a class="link-menu" href="create-sale.html">Ventas</a>
+        </li>
+      </ul>
+
+      <div class="nav-footer">
+        <img src="imgs/main_logo_menu.png" alt="secondary-logo">
+        <p>Todos los derechos reservados a Lancer Company</p>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="modal">
+      <div class="content-modal modal-close">
+        <span class="close">&times;</span>
+        <h3>Detalle de venta</h3>
+        <article class="detail-list">
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Numero de factura</th>
+                <th>Código de producto</th>
+                <th>Nombre producto</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>12/10/2024</td>
+                <td>FVT-03184</td>
+                <td>123456</td>
+                <td>PAPA CAPIRA SIN LAVAR</td>
+                <td>5</td>
+                <td>350.0</td>
+                <td>1250.0</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </article>
+
+        <article class="values">
+          <div class="values-group">
+            <p><strong>Subtotal</strong></p>
+            <p>9700</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="btns-main">
+      <a href="create-sale.html" class="btn-actions">
+        <span class="material-symbols-rounded">
+          currency_exchange
+        </span>Crear una venta
+      </a>
+      <a href="sales.html" class="btn-actions">
+        <span class="material-symbols-rounded">
+          receipt_long
+        </span>Mostrar ventas
+      </a>
+    </section>
+
+    <hr>
+
+    <section class="search-sale">
+      <h4>Buscar venta</h4>
+      <form class="form-search">
+        <div class="search-input">
+          <label for="sale-code">Número de factura</label>
+          <input type="text" id="sale-code" name="sale-code">
+        </div>
+        <input type="button" value="Buscar">
+      </form>
+    </section>
+
+    <section class="sale-list">
+      <table class="sale-table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Número de factura</th>
+            <th>Método de pago</th>
+            <th>Total</th>
+            <th>Ver detalle</th>
+          </tr>
+        </thead>
+
+        <body>
+          <tr>
+            <td>11/09/2024</td>
+            <td>FVC45687</td>
+            <td>CASH</td>
+            <td>18000</td>
+            <td>
+              <a class="btn-td details-btn" href="#">
+                <span class="material-symbols-rounded">
+                  view_list
+                </span>
+              </a>
+            </td>
+          </tr>
+        </body>
+      </table>
+    </section>
+
+
+  </main>
+  <script src="scripts/sales-modal.js"></script>
+</body>
+
+</html>
