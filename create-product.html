@@ -44,7 +44,7 @@
         <li class="menu-item">
           <span class="material-symbols-rounded">
             currency_exchange
-          </span><a class="link-menu" href="#"></a>Ventas
+          </span><a class="link-menu" href="#">Ventas</a>
         </li>
       </ul>
 
@@ -85,17 +85,21 @@
             <div class="form-group">
               <label for="product-category">Categoría:</label>
               <select name="product-category" id="product-category">
-                <option value="" disabled selected>Selecicones una categoría</option>
-                <option value="">VERDURAS</option>
-                <option value="">CARNES</option>
-                <option value="">FRUTAS</option>
-                <option value="">GRANOS</option>
-                <option value="">PARVA</option>
-                <option value="">ASEO</option>
+                <option value="" disabled selected>Selecicone una categoría</option>
+                <option value="VERDURAS">VERDURAS</option>
+                <option value="CARNES">CARNES</option>
+                <option value="FRUTAS">FRUTAS</option>
+                <option value="GRANOS">GRANOS</option>
+                <option value="PARVA">PARVA</option>
+                <option value="ASEO">ASEO</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="product-price">Price:</label>
+              <label for="product-price">Cantidad:</label>
+              <input type="number" step="0.01" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+              <label for="product-price">Precio:</label>
               <input type="number" id="product-price" name="product-price" required>
             </div>
             <div class="btn-group">

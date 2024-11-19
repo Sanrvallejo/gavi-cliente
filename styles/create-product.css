@@ -78,6 +78,10 @@ input[type="button"]:hover {
 }
 
 @media(max-width: 840px) {
+  main {
+    overflow-y: auto;
+  }
+
   article {
     width: 100%;
     min-width: 180px;
