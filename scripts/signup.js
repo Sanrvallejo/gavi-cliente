@@ -44,9 +44,9 @@ btnSend.addEventListener('click', async function (event) {
     const usuario = {
       nombre: nombreIngresado,
       email: correoIngresado,
-      password: contrasenaIngresada
+      password: btoa(contrasenaIngresada)
     }
-
+    
     try {
       let response = await fetch('http://localhost:8080/api/gavi/nuevo-usuario', {
         method: 'POST',
@@ -55,22 +55,22 @@ btnSend.addEventListener('click', async function (event) {
         },
         body: JSON.stringify(usuario)
       });
-  
+      
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || `Error: ${response.status}`);
       }
-  
+      
+      window.location.href = "login.html";
+      
     } catch (error) {
       console.error("Error:", error);
       throw error;
     }
-
     
   } else {
     alert("Compruebe los datos y que las constraseñas coincidan")
   }
   
-  window.location.href = "login.html";
 })
 
