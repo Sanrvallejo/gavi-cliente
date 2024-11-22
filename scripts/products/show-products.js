@@ -38,8 +38,10 @@ function renderProducts(productsList) {
 }
 
 async function getProducts() {
+  const usuario = JSON.parse(localStorage.getItem("loggedInUser"));
+
   try {
-    let response = await fetch('http://localhost:8080/api/gavi/productos', {
+    let response = await fetch(`http://localhost:8080/api/gavi/productos/${usuario.id}`, {
       method: 'GET'
     });
 
