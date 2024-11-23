@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+}
+
+.form-signup {
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-signup img {
+  width: 30vw;
+  margin-bottom: 20px;
+}
+
+.form-signup p {
+  width: 30vw;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.form-signup h2 {
+  color: #22aa46;
+  font-size: 2rem;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.form-signup form {
+  width: 60%;
+
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-family: "Inter";
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.btc-cta {
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-family: "Inter";
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.btc-cta a,
+.btc-cta input {
+  width: 120px;
+  padding: 8px;
+  text-align: center;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send {
+  background-color: #22aa46;
+  color: white;
+
+  &:hover {
+    background-color: #009900;
+  }
+}
+
+.cancel {
+  background-color: #dfdfdf;
+  color: black;
+
+  &:hover {
+    background-color: #b4b3b3;
+  }
+}
