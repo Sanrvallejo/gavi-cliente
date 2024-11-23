@@ -30,7 +30,7 @@ La aplicación cliente consume servicios de una API REST proporcionada por la ap
 Para instalar la aplicación servidor visite el siguiente repositorio y siga las instrucciones del README.
 
 ### Repositorio de la App Servidor  
-[https://github.com/Sanrvallejo/gavi-server.git](#) 
+[Enlace al repositorio de la App Servidor](https://github.com/Sanrvallejo/gavi-server.git) 
 
 ## Instalación  
 1. Clona este repositorio en tu máquina local:  
