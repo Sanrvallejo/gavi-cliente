@@ -39,4 +39,16 @@ btnCrear.addEventListener('click', async (e) => {
   }
 })
 
+//limpiar campos del formulario
+document.addEventListener('DOMContentLoaded', (e) => {
+  e.preventDefault();
 
+  const btnClear = document.querySelector('#btn-clean');
+
+  btnClear.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const form = document.querySelector('form');
+    form.reset();
+  })
+})
