@@ -81,6 +81,60 @@ input[type="button"]:hover {
   background-color: #1e739c;
 }
 
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content-modal {
+  width: 30%;
+  padding: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3vh;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0,0.5);
+  transition: transform 0.7s;
+  transform: translateY(0%);
+}
+
+.modal-close {
+  transform: translateY(-200%);
+}
+
+.content-modal span {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #b82b2b;
+  color: white;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.content-modal span:hover {
+  background-color: #9d2424;
+}
+
 @media(max-width: 840px) {
   main {
     overflow-y: auto;
