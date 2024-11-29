@@ -178,6 +178,8 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     localStorage.setItem('cart', JSON.stringify(carrito));
     localStorage.setItem('quantity', JSON.stringify(cantidad));
 
+    await actualizarProductos(usuario);
+
     renderProducts();
   })
 })
@@ -189,4 +191,27 @@ function generarCodigo() {
     codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
   }
   return codigo.toUpperCase();
+}
+
+//actualizar productos
+async function actualizarProductos(usuario) {
+  try {
+    let response = await fetch(`http://localhost:8080/api/gavi/productos/${usuario.id}`, {
+      method: 'GET'
+    });
+
+    if (response.ok) {
+
+      if (response.status == 204) {
+        localStorage.setItem('productsList', "");
+      }
+
+      newProductsList = await response.json();
+
+      localStorage.setItem('productsList', JSON.stringify(newProductsList));
+
+    }
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
