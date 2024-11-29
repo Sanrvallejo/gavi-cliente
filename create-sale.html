@@ -88,7 +88,7 @@
           <input type="number" id="quantity" name="quantity" step="0.01" required>
         </div>
 
-        <input type="button" value="Buscar">
+        <input type="button" class="btn-search" value="Buscar">
       </form>
     </section>
 
@@ -106,20 +106,7 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>123456</td>
-              <td>PAPA CAPIRA SIN LAVAR</td>
-              <td class="w-q">
-                <input type="number" name="quantity" id="td-quantity" step="0.01" required>
-              </td>
-              <td>1250.0</td>
-              <td>
-                <a class="btn-td remove-btn" href="#">
-                  <span class="material-symbols-rounded">remove</span>
-                </a>
-              </td>
-            </tr>
-            
+            <!--Generado en create-sale.js-->
           </tbody>
         </table>
       </article>
@@ -128,7 +115,7 @@
         <div class="totals">
           <div class="totals-group">
             <h3>Total</h3>
-            <h3>15000</h3>
+            <h3 id="total-sale"></h3>
           </div>
         </div>
 
@@ -137,7 +124,7 @@
             <label for="pay-m">Método de pago:</label>
             <select name="pay-m" id="pay">
               <option value="" disabled selected>Select a method></option>
-              <option value="EFECTIVO">EFEECTIVO</option>
+              <option value="EFECTIVO">EFECTIVO</option>
               <option value="DEBITO">DÉBITO</option>
               <option value="CREDITO">CRÉDITO</option>
               <option value="TRANSFERENCIA">TRANSFERENCIA</option>
@@ -155,6 +142,7 @@
   </main>
 
   <script src="scripts/logout.js"></script>
+  <script src="scripts/sales/create-sale.js"></script>
 </body>
 
 </html>
