@@ -1,9 +1,3 @@
-document.addEventListener('DOMContentLoaded', (e) => {
-  e.preventDefault();
-
-  renderProducts();
-})
-
 const btnSearch = document.querySelector('.btn-search');
 btnSearch.addEventListener('click', (e) => {
   e.preventDefault();
@@ -77,8 +71,8 @@ function cart(foundProduct, cant) {
 
 function renderProducts() {
   let table = document.querySelector('.product-table tbody');
-  const productList = JSON.parse(localStorage.getItem('cart'));
-  const cantidad = JSON.parse(localStorage.getItem('quantity'));
+  const productList = JSON.parse(localStorage.getItem('cart')) || [];
+  const cantidad = JSON.parse(localStorage.getItem('quantity')) || [];
   let total = 0;
   let productRow = '';
 
@@ -138,3 +132,61 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
   })
 })
+
+//hacer solicitud de crear venta
+document.addEventListener('DOMContentLoaded', async (e) => {
+  e.preventDefault();
+
+  const btnPagar = document.querySelector('#send');
+
+  btnPagar.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const usuario = JSON.parse(localStorage.getItem('loggedInUser'));
+    let carrito =  JSON.parse(localStorage.getItem('cart'));
+    let cantidad = JSON.parse(localStorage.getItem('quantity'));
+
+    const nuevaVenta = {
+      codigo: generarCodigo(),
+      total: document.querySelector('#total-sale').textContent,
+      metodoPago: document.querySelector('#pay').value
+    }
+
+    const ventaDto = {
+      venta: nuevaVenta,
+      productos: carrito,
+      cantidades: cantidad
+    }
+
+    let response = await fetch(`http://localhost:8080/api/gavi/nueva-venta/${usuario.id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(ventaDto)
+    })
+
+    if (response.ok) {
+      alert('Venta creada correctamente');
+    } else {
+      alert('La venta no fue creada');
+    }
+
+    carrito = [];
+    cantidad = [];
+    
+    localStorage.setItem('cart', JSON.stringify(carrito));
+    localStorage.setItem('quantity', JSON.stringify(cantidad));
+
+    renderProducts();
+  })
+})
+
+function generarCodigo() {
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let codigo = '';
+  for (let i = 0; i < 5; i++) {
+    codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  }
+  return codigo.toUpperCase();
+}
