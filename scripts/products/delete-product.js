@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', async (e) => {
           product.codigo.toLowerCase() === codigoProducto.toLowerCase()
         );
 
+        console.log(productoEncontrado);
+        
+
         if (productoEncontrado) {
           localStorage.setItem('editProduct', JSON.stringify(productoEncontrado));
           eliminarProduto(productoEncontrado.id);
