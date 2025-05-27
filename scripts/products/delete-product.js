@@ -1,43 +1,43 @@
-document.addEventListener('DOMContentLoaded', async (e) => {
+document.addEventListener("DOMContentLoaded", (e) => {
+  e.preventDefault();
+  document.querySelector(".product-table").addEventListener("click", async (e) => {
+      if (e.target.closest(".btn-td.remove-btn")) {
+        e.preventDefault();
 
-  document.querySelector('.product-table').addEventListener('click', async (e) => {
-    if (e.target.closest('.btn-td.remove-btn')) {
-      e.preventDefault();
+        const fila = e.target.closest("tr");
+        if (fila) {
+          const codigoProducto = fila.cells[0].textContent.trim();
+          const productsList = JSON.parse(localStorage.getItem("productsList")) || [];
 
-      const fila = e.target.closest("tr");
-      if (fila) {
-        const codigoProducto = fila.cells[0].textContent.trim();
-        const productsList = JSON.parse(localStorage.getItem('productsList')) || [];
+          const productoEncontrado = productsList.find(
+            (product) => product.codigo.toLowerCase() === codigoProducto.toLowerCase()
+          );
 
-        const productoEncontrado = productsList.find(product =>
-          product.codigo.toLowerCase() === codigoProducto.toLowerCase()
-        );
-
-        console.log(productoEncontrado);
-        
-
-        if (productoEncontrado) {
-          localStorage.setItem('editProduct', JSON.stringify(productoEncontrado));
-          eliminarProduto(productoEncontrado.id);
-          window.location.href = 'products.html';
+          if (productoEncontrado) {
+            localStorage.setItem('editProduct', JSON.stringify(productoEncontrado));
+            await eliminarProduto(productoEncontrado.id);
+            window.location.href = 'products.html';
+          } else {
+            alert("Producto no encontrado");
+          }
         } else {
-          alert("Producto no encontrado");
+          alert("Error al obtener la fila");
         }
-      } else {
-        alert("Error al obtener la fila");
       }
-    }
-  })
-})
+    });
+});
 
 async function eliminarProduto(idProducto) {
   try {
-    let response = await fetch(`http://localhost:8080/api/gavi/eliminar-producto/${idProducto}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
+    let response = await fetch(
+      `http://localhost:8080/api/gavi/eliminar-producto/${idProducto}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
-    });
+    );
 
     if (response.ok) {
       alert(`Producto con ID ${idProducto} eliminado correctamente.`);
